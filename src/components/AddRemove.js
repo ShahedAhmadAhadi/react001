@@ -13,7 +13,8 @@ class AddRemove extends Component {
     add = () => {
         if (this.state.value) {
             let val = this.state.value;
-            let item = this.state.lst.push(val)
+            let item = this.state.lst.push([val, this.state.lst.length])
+            console.log(this.state.lst)
             this.setState({
                 value: ''
             })
@@ -32,6 +33,14 @@ class AddRemove extends Component {
         }
     };
 
+    remove = (val) => {
+        let rem = this.state.lst.filter((v, i) => v[1] != val);
+        console.log(rem, val);
+        this.setState({
+            lst: rem
+        })
+    }
+
     render() {
         return (
             <div>
@@ -41,7 +50,7 @@ class AddRemove extends Component {
                     onKeyPress={this.keyFilter}
                 />
                 <button onClick={this.add}>Add</button>
-                {this.state.lst && this.state.lst.map((item) => <div><span>{item}</span><button>&times;</button></div>)}
+                {this.state.lst && this.state.lst.map((item) => <div key={item[1]}><span>{item[0]}</span><button onClick={() => this.remove([item[1]])}>&times;</button></div>)}
             </div>
         );
     }
