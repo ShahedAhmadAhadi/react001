@@ -30,7 +30,14 @@ class inputCounter extends Component {
             if (parseFloat(text)){
                 this.setState({
                     num: this.state.num + parseFloat(text),
-                    value: ''
+                    value: '',
+                    wrong: ''
+                })
+            }else if(text === '0') {
+                this.setState({
+                    num:this.state.num + parseFloat(text),
+                    value: '',
+                    wrong: ''
                 })
             } else {
                 this.setState({
@@ -41,12 +48,19 @@ class inputCounter extends Component {
         }
         
     }
+
+    enter = (e) => {
+        console.log(e);
+        if (e.charCode === 13) {
+            this.add()
+        }
+    }
     
     render() {
         return (
             <div>
                 <h1>{this.state.num}</h1>
-                <input value={this.state.value} onChange={this.in}/>
+                <input value={this.state.value} onChange={this.in} onKeyPress={this.enter}/>
                 <button onClick={this.add}>Add</button>
                 <p className="red">{this.state.wrong}</p>
             </div>
