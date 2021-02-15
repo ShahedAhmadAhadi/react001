@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css'
 
 class AddRemove extends Component {
     constructor(props) {
@@ -6,20 +7,21 @@ class AddRemove extends Component {
 
         this.state = {
             value: "",
-            lst: []
+            lst: [],
+            count: 0
         };
     }
 
     add = () => {
         if (this.state.value) {
             let val = this.state.value;
-            let item = this.state.lst.push([val, this.state.lst.length])
+            let item = this.state.lst.push([val, this.state.count])
             console.log(this.state.lst)
             this.setState({
-                value: ''
+                value: '',
+                count: this.state.count + 1
             })
         }
-        
     };
 
     input = (e) => {
