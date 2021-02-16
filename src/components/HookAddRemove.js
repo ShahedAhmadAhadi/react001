@@ -15,8 +15,7 @@ function HookAddRemove() {
     }
 
     const remove = (in_arr_index) => {
-        let new_update = update.filter((val) => {console.log(val, in_arr_index)
-             return val[1] != in_arr_index});
+        let new_update = update.filter((val) => {return val[1] != in_arr_index});
         
         setUpdate(new_update);
     }
@@ -46,7 +45,7 @@ function HookAddRemove() {
     }
     let btnColors = (queue) => {
         for(let i = 0; i <= queue; i++){
-            if(queue % 5 === 0 && queue % 7 === 0){
+            if(queue % 5 === 0 || queue % 7 === 0){
                 return 'red'
             }else if(queue % 6 === 0){
                 return 'blue'
