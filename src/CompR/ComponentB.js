@@ -6,6 +6,7 @@ class ComponentB extends Component {
         return (
             <div>
                 <ComponentC />
+                <div> ComponentB </div>
             </div>
         )
     }
