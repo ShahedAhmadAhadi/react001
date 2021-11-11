@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function ComponentC() {
-    return (
-        <div>
-            
-        </div>
-    )
+class ComponentC extends Component {
+    render() {
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 
 export default ComponentC
+

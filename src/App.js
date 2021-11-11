@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 // import { Writer } from './components/textAdder'
 // import Counter from './components/inputCounter'
@@ -7,10 +6,18 @@ import './App.css';
 // import InputCounter from './components/HooksInputCounter';
 // import AddRemoveH from './components/HookAddRemove'
 import { UserProvider } from './context/context'
+import { useState } from 'react'
 
 function App() {
+
+  const [count, setCount] = useState(0)
+
+  const updateValue = () => {
+    setCount(count + 1)
+  }
+
   return (
-    <UserProvider>
+    <UserProvider value={count} updateValue={updateValue}>
 
       <div className="App">
         {/* <header className="App-header">
