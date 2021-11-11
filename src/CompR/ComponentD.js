@@ -5,6 +5,7 @@ class ComponentD extends Component {
     render() {
         return (
             <div>
+                <div> ComponentD</div>
                 <ComponentE />
             </div>
         )

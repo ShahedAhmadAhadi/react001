@@ -9,6 +9,10 @@ import { UserProvider } from './context/context'
 import { useState } from 'react'
 import ComponentA from './CompR/ComponentA';
 import ComponentC from './CompR/ComponentC';
+import ComponentB from './CompR/ComponentB';
+import ComponentF from './CompR/ComponentF';
+import ComponentE from './CompR/ComponentE';
+import ComponentD from './CompR/ComponentD';
 
 function App() {
 
@@ -23,8 +27,9 @@ function App() {
     <UserProvider value={count}>
 
       <div className="App">
-        <ComponentA />
-        <ComponentC />
+        <ComponentA/>
+        <ComponentB/>
+        <ComponentD/>
         <button onClick={() => updateValue()}>click</button>
         {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

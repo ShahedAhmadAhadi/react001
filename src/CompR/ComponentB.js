@@ -5,8 +5,8 @@ class ComponentB extends Component {
     render() {
         return (
             <div>
-                <ComponentC />
                 <div> ComponentB </div>
+                <ComponentC />
             </div>
         )
     }
