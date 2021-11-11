@@ -5,19 +5,23 @@ import './App.css';
 // import AddRemove from './components/AddRemove'
 // import HookCounter from "./components/HooksFullCounter";
 // import InputCounter from './components/HooksInputCounter';
-import AddRemoveH from './components/HookAddRemove'
+// import AddRemoveH from './components/HookAddRemove'
+import { UserProvider } from './context/context'
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
+    <UserProvider>
+
+      <div className="App">
+        {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <HookCounter />
         <InputCounter />
         <AddRemoveH />
       </header> */}
-      
-    </div>
+
+      </div>
+    </UserProvider>
   );
 }
 
