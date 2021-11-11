@@ -8,11 +8,9 @@ import './App.css';
 import { UserProvider } from './context/context'
 import { useState } from 'react'
 import ComponentA from './CompR/ComponentA';
-import ComponentC from './CompR/ComponentC';
 import ComponentB from './CompR/ComponentB';
-import ComponentF from './CompR/ComponentF';
-import ComponentE from './CompR/ComponentE';
 import ComponentD from './CompR/ComponentD';
+import Request from './CompR/request';
 
 function App() {
 
@@ -37,7 +35,7 @@ function App() {
         <InputCounter />
         <AddRemoveH />
       </header> */}
-
+      <Request />
       </div>
     </UserProvider>
   );
