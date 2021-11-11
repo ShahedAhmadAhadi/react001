@@ -23,9 +23,10 @@ class Request extends Component {
 
 
     render() {
+        const {posts} = this.state
         return (
             <div>
-                
+                {posts && posts.map(post => <div key= {post.id}>{post.title}</div> )}
             </div>
         )
     }
