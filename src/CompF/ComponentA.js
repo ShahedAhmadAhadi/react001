@@ -1,22 +1,14 @@
-import React, { Component } from 'react'
-import { UserConsumer } from '../context/context'
+import React from 'react'
 
-class ComponentA extends Component {
-    render() {
-        return (
-        // <div>
-        //     <button onClick={this.props.updateValue}>a</button>
-        // </div>
-            <UserConsumer>
-                {
-                    (value) => {
-                        return <div> ComponentA {value} </div>
-                    }
-                }
-            </UserConsumer>
-        )
-    }
+function ComponentA() {
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
 export default ComponentA
+
+
 
