@@ -6,34 +6,29 @@ import './App.css';
 // import InputCounter from './components/HooksInputCounter';
 // import AddRemoveH from './components/HookAddRemove'
 import { UserProvider } from './context/context'
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import ComponentA from './CompR/ComponentA';
 import ComponentB from './CompR/ComponentB';
 import ComponentD from './CompR/ComponentD';
 import Request from './CompR/request';
+import React from 'react'
 
-function App() {
+export const CountContext = React.createContext()
 
   const initialState = 0
-
   const reducer = (state, action) => {
     switch (action.type) {
       case 'increment':
-        
-        break;
-    
+        return state + 1
       default:
-        break;
+        return state
     }
   }
 
-  const updateValue = () => {
-    setCount(count + 1)
-  }
-  console.log(count)
-
+function App() {
+  const [count, dispatch] = useReducer(reducer, initialState)
   return (
-    <UserProvider value={count}>
+    <CountContext.Provider value={{count: count, updateCount: dispatch}}>
 
       <div className="App">
         {/* <ComponentA/>
@@ -48,7 +43,7 @@ function App() {
       </header> */}
       <Request />
       </div>
-    </UserProvider>
+    </CountContext.Provider>
   );
 }
 
