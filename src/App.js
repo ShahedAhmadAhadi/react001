@@ -7,9 +7,9 @@ import './App.css';
 // import AddRemoveH from './components/HookAddRemove'
 import { UserProvider } from './context/context'
 import { useReducer, useState } from 'react'
-import ComponentA from './CompR/ComponentA';
-import ComponentB from './CompR/ComponentB';
-import ComponentD from './CompR/ComponentD';
+import ComponentA from './CompF/ComponentA';
+import ComponentB from './CompF/ComponentB';
+import ComponentD from './CompF/ComponentD';
 import Request from './CompR/request';
 import React from 'react'
 
@@ -17,7 +17,7 @@ export const CountContext = React.createContext()
 
   const initialState = 0
   const reducer = (state, action) => {
-    switch (action.type) {
+    switch (action) {
       case 'increment':
         return state + 1
       default:
@@ -31,10 +31,10 @@ function App() {
     <CountContext.Provider value={{count: count, updateCount: dispatch}}>
 
       <div className="App">
-        {/* <ComponentA/>
+        <ComponentA/>
         <ComponentB/>
         <ComponentD/>
-        <button onClick={() => updateValue()}>click</button> */}
+        {/* <button onClick={() => updateValue()}>click</button> */}
         {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <HookCounter />
