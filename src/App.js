@@ -14,7 +14,18 @@ import Request from './CompR/request';
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const initialState = 0
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case 'increment':
+        
+        break;
+    
+      default:
+        break;
+    }
+  }
 
   const updateValue = () => {
     setCount(count + 1)
@@ -25,10 +36,10 @@ function App() {
     <UserProvider value={count}>
 
       <div className="App">
-        <ComponentA/>
+        {/* <ComponentA/>
         <ComponentB/>
         <ComponentD/>
-        <button onClick={() => updateValue()}>click</button>
+        <button onClick={() => updateValue()}>click</button> */}
         {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <HookCounter />
