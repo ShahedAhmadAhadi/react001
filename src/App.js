@@ -20,6 +20,10 @@ export const CountContext = React.createContext()
     switch (action) {
       case 'increment':
         return state + 1
+      case 'decrement':
+        return state - 1
+      case 'reset':
+        return initialState
       default:
         return state
     }
