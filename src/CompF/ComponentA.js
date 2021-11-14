@@ -7,6 +7,8 @@ function ComponentA() {
         <div>
             ComponentA - {countContext.count}
             <button onClick={() => countContext.updateCount('increment')}>Increment</button>
+            <button onClick={() => countContext.updateCount('decrement')}>Decrement</button>
+            <button onClick={() => countContext.updateCount('reset')}>reset</button>
         </div>
     )
 }
